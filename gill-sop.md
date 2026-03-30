@@ -81,99 +81,176 @@ Storage location where VM files are stored.
 
 # Procedure Steps
 
-## Step 1: Pre-Creation Planning and Assessment
-
-### Step 1.1 Identify Purpose and Requirements
-Determine the purpose of the virtual machine such as:
+## Step 1: Identify the Purpose of the Virtual Machine
+Determine why the Linux VM is needed:
 - Web server
 - Database server
-- Application server
-
-Also define the required resources:
-- CPU cores
-- RAM
-- Storage space
-- Network configuration
-
-### Step 1.2 Plan Resource Allocation
-Check the host server capacity and available resources.  
-Select appropriate datastore and plan CPU and memory allocation.
-
-### Step 1.3 Communicate with Stakeholders
-Discuss the VM requirements with the requesting team and confirm the specifications before creating the VM.
+- Testing environment
+- Application deployment
 
 ---
 
-## Step 2: Configuration of Virtual Machine
+## Step 2: Gather System Requirements
+Check required resources.
 
-### Step 2.1 Access VMware vSphere Client
-1. Open the vSphere Client.
-2. Connect to the vCenter Server.
+Linux command to check system information (after install):
 
-### Step 2.2 Create a New Virtual Machine
-1. Navigate to the host or cluster.
-2. Right-click and select **New Virtual Machine**.
-3. Choose the deployment type.
-
-### Step 2.3 Configure Virtual Machine Settings
-Set the following configuration:
-- VM name and location
-- Operating system
-- CPU allocation
-- Memory allocation
-- Network settings
-- Storage configuration
+```bash
+uname -a
+lscpu
+free -h
+df -h
+```
 
 ---
 
-## Step 3: Installation of Guest Operating System
+## Step 3: Check Host Capacity in VMware
+Before creating the VM, ensure resources are available.
 
-### Step 3.1 Attach Installation ISO
-Attach the ISO file that contains the operating system installation media.
+Commands to verify disk and memory after VM deployment:
 
-### Step 3.2 Install Guest OS
-1. Power on the virtual machine.
-2. Follow the installation steps for the operating system.
-3. Configure administrator credentials and system settings.
-
-### Step 3.3 Configure Networking
-Set up:
-- IP address
-- DNS settings
-- Network connectivity
+```bash
+top
+htop
+```
 
 ---
 
-## Step 4: Post-Creation Verification and Testing
+## Step 4: Access VMware vSphere Client
+Login to vSphere and navigate to the server.
 
-### Step 4.1 Verify Installation
-Confirm that the operating system has been installed successfully.
+After Linux installation, confirm login:
 
-### Step 4.2 Functional Testing
-Perform testing such as:
-- Logging into the system
-- Testing network connectivity
-- Checking required services
-
-### Step 4.3 Security Compliance
-Apply security configurations including:
-- Firewall rules
-- System updates
-- Security policies
+```bash
+whoami
+hostname
+```
 
 ---
 
-## Step 5: Documentation of Virtual Machine
-
-Record the following information:
+## Step 5: Create a New Virtual Machine
+Configure:
 - VM name
-- CPU and RAM allocation
-- Storage size
-- Network configuration
-- Purpose of the VM
+- CPU
+- RAM
+- Disk
+- Network
 
+Verify network interface in Linux:
+
+```bash
+ip a
+ip link
+```
 
 ---
+
+## Step 6: Configure Linux System
+Update the system after installation.
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+
+Set hostname:
+
+```bash
+sudo hostnamectl set-hostname linux-vm01
+```
+
+Check OS version:
+
+```bash
+cat /etc/os-release
+```
+
+---
+
+## Step 7: Install Required Packages
+Example packages commonly installed:
+
+```bash
+sudo apt install net-tools -y
+sudo apt install curl -y
+sudo apt install wget -y
+sudo apt install git -y
+```
+
+Verify installations:
+
+```bash
+git --version
+curl --version
+```
+
+---
+
+## Step 8: Perform System Tests
+
+### Network Test
+Check internet connectivity:
+
+```bash
+ping -c 4 google.com
+```
+
+### Check IP Address
+
+```bash
+ip addr show
+```
+
+### Check Running Services
+
+```bash
+systemctl list-units --type=service
+```
+
+### Disk Usage Test
+
+```bash
+df -h
+```
+
+### Memory Usage Test
+
+```bash
+free -m
+```
+
+### Check Open Ports
+
+```bash
+ss -tuln
+```
+
+### Firewall Status
+
+```bash
+sudo ufw status
+```
+
+---
+
+## Step 9: Document the Virtual Machine
+Record the system details using:
+
+```bash
+hostnamectl
+ip a
+df -h
+free -h
+```
+
+Save the information in system documentation.
+
+Example:
+
+```bash
+echo "VM documentation saved successfully"
+```
+
 # Reference or Related Documents
 
 Below are some helpful resources related to this SOP:
