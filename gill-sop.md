@@ -3,7 +3,7 @@
 **Student Name:** Balbhader Singh Gill  
 **Instructor:** Felix  
 **Course:** IT / System Administration  
-**Date:** March 27, 2026  
+**Date:** March 30, 2026  
 **Document Type:** Markdown SOP Documentation  
 
 ---
@@ -173,32 +173,7 @@ Save the information in the company documentation system.
 
 | Version | Date | Author | Description |
 |--------|------|--------|-------------|
-| 1.0 | March 27, 2026 | Balbhader Singh Gill | Initial Document |
+| 1.0 | March 30, 2026 | Balbhader Singh Gill | Initial Document |
 
 ---
 
-# Repository Information
-
-This SOP document is created using **Markdown** and uploaded to GitHub as part of Assignment 2.
-
-Example repository structure:
-
-```
-demo/
- ├── assignment2-sop.md
- └── images/
-```
-
----
-
-# Markdown Features Used
-This document demonstrates:
-- Headings
-- Tables
-- Lists
-- Documentation formatting
-- GitHub-ready Markdown
-
----
-
-# End of Document
