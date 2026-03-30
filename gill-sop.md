@@ -1,4 +1,4 @@
-# Assignment 2 – Standard Operating Procedure (SOP)
+# Standard Operating Procedure (SOP)
 
 **Student Name:** Balbhader Singh Gill  
 **Instructor:** Felix  
