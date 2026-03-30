@@ -1,168 +1,204 @@
 # Standard Operating Procedure (SOP)
 
-## Virtual Linux Server Setup for Web Application Testing
+**Student Name:** Balbhader Singh Gill  
+**Instructor:** Felix  
+**Course:** IT / System Administration  
+**Date:** March 27, 2026  
+**Document Type:** Markdown SOP Documentation  
 
 ---
 
-## 1. Purpose
-
-This document explains how to set up a virtual Linux server for testing web applications. It ensures that the setup process is consistent and easy to follow.
-
----
-
-## 2. Scope
-
-This SOP is used by students and system administrators who need to create a Linux-based test environment.
+# Standard Operating Procedure
+## New Virtual Machine Creation on VMware vSphere 7.0
 
 ---
 
-## 3. Requirements
-
-### Hardware
-
-* Minimum 4 GB RAM
-* 20 GB Storage
-* Virtualization platform (Proxmox / VMware / VirtualBox)
-
-### Software
-
-* Ubuntu Server ISO
-* SSH client
+## Purpose
+The purpose of this document is to describe the standard process for creating a new Virtual Machine (VM) using VMware vSphere 7.0.  
+This ensures that all virtual machines are created consistently, securely, and according to organizational best practices.
 
 ---
 
-## 4. Steps
+## Scope
+This SOP applies to:
+- System Administrators
+- IT Support Staff
+- Virtualization Team
+- IT Operations Team
 
-### Step 1: Create Virtual Machine
-
-Create a new VM with the following settings:
-
-* Name: web-server-01
-* OS: Ubuntu Linux (64-bit)
-* RAM: 2 GB
-* CPU: 2 cores
-* Disk: 20 GB
-
----
-
-### Step 2: Install Ubuntu Server
-
-* Attach ISO file
-* Start VM
-* Follow installation steps
-* Set username and password
+This document covers:
+- Planning the virtual machine
+- Configuring the VM
+- Installing the operating system
+- Testing the VM
+- Documenting the VM
 
 ---
 
-### Step 3: Update System
+## Objectives
+The objectives of this SOP are:
+- Ensure proper VM configuration
+- Maintain system security
+- Standardize VM deployment
+- Reduce errors during VM setup
+- Improve documentation and tracking
 
-```bash
-sudo apt update
-sudo apt upgrade -y
+---
+
+## Accountability Matrix
+
+| Task | Responsible Person/Team | Approval |
+|------|------------------------|----------|
+| Planning VM Requirements | System Administrator | IT Manager |
+| VM Configuration | Virtualization Team | IT Operations Manager |
+| Operating System Installation | System Administrator | IT Manager |
+| Testing and Verification | QA Team | QA Manager |
+| Documentation | Documentation Team | Author |
+
+---
+
+## Definitions
+
+**Virtual Machine (VM):**  
+A virtual computer that runs inside a physical server.
+
+**VMware vSphere:**  
+A platform used to manage and deploy virtual machines.
+
+**ISO File:**  
+An installation image used to install operating systems.
+
+**Datastore:**  
+Storage location where virtual machine files are saved.
+
+---
+
+# Procedure Steps
+
+## Step 1: Pre-Creation Planning
+
+### Step 1.1 Identify Purpose
+Determine why the VM is needed.  
+Example:
+- Web server
+- Database server
+- Application server
+
+### Step 1.2 Define Requirements
+Decide the resources required:
+- CPU cores
+- RAM
+- Storage
+- Network configuration
+
+### Step 1.3 Confirm With Stakeholders
+Communicate with the requesting team and confirm the specifications.
+
+---
+
+## Step 2: Configure Virtual Machine
+
+### Step 2.1 Access vSphere Client
+1. Open VMware vSphere Client.
+2. Log in to vCenter Server.
+
+### Step 2.2 Create New Virtual Machine
+1. Navigate to the host or cluster.
+2. Right-click and select **New Virtual Machine**.
+3. Select deployment type.
+
+### Step 2.3 Configure Settings
+Set the following:
+- Virtual machine name
+- Operating system type
+- CPU allocation
+- Memory allocation
+- Network settings
+- Storage location
+
+---
+
+## Step 3: Install Guest Operating System
+
+### Step 3.1 Attach Installation Media
+Attach the ISO file containing the OS installer.
+
+### Step 3.2 Start Installation
+1. Power on the VM.
+2. Follow OS installation instructions.
+3. Configure system settings.
+
+### Step 3.3 Configure Network
+Set:
+- IP address
+- DNS settings
+- Connectivity
+
+---
+
+## Step 4: Post-Creation Verification
+
+### Step 4.1 Verify Installation
+Check that the OS installed correctly.
+
+### Step 4.2 Test System
+Perform tests:
+- Login test
+- Network connectivity
+- Application test
+
+### Step 4.3 Security Configuration
+Apply:
+- Firewall settings
+- Updates
+- Security policies
+
+---
+
+## Step 5: Documentation
+
+### Step 5.1 Record VM Details
+Document:
+- VM name
+- CPU and RAM
+- Storage
+- Network configuration
+
+### Step 5.2 Update System Records
+Save the information in the company documentation system.
+
+---
+
+# Revision History
+
+| Version | Date | Author | Description |
+|--------|------|--------|-------------|
+| 1.0 | March 27, 2026 | Balbhader Singh Gill | Initial Document |
+
+---
+
+# Repository Information
+
+This SOP document is created using **Markdown** and uploaded to GitHub as part of Assignment 2.
+
+Example repository structure:
+
+```
+demo/
+ ├── assignment2-sop.md
+ └── images/
 ```
 
 ---
 
-### Step 4: Install Apache Web Server
-
-```bash
-sudo apt install apache2 -y
-```
-
-Start service:
-
-```bash
-sudo systemctl start apache2
-sudo systemctl enable apache2
-```
+# Markdown Features Used
+This document demonstrates:
+- Headings
+- Tables
+- Lists
+- Documentation formatting
+- GitHub-ready Markdown
 
 ---
 
-### Step 5: Configure Firewall
-
-```bash
-sudo ufw allow OpenSSH
-sudo ufw allow 'Apache'
-sudo ufw enable
-```
-
----
-
-### Step 6: Check Server
-
-Find IP address:
-
-```bash
-ip a
-```
-
-Open browser and enter:
-http://your-server-ip
-
----
-
-### Step 7: Install Additional Packages
-
-```bash
-sudo apt install mysql-server -y
-sudo apt install php libapache2-mod-php -y
-```
-
-Restart Apache:
-
-```bash
-sudo systemctl restart apache2
-```
-
----
-
-### Step 8: Enable SSH
-
-```bash
-sudo apt install openssh-server -y
-sudo systemctl status ssh
-```
-
-Connect using:
-
-```bash
-ssh username@server-ip
-```
-
----
-
-## 5. Verification
-
-* Web server is running
-* SSH connection works
-* Firewall is enabled
-
----
-
-## 6. Troubleshooting
-
-Restart Apache:
-
-```bash
-sudo systemctl restart apache2
-```
-
-Restart SSH:
-
-```bash
-sudo systemctl restart ssh
-```
-
-Check logs:
-
-```bash
-sudo journalctl -xe
-```
-
----
-
-## 7. Conclusion
-
-This SOP provides a simple way to set up a Linux server for testing web applications in a virtual environment.
-
----
+# End of Document
