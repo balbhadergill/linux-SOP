@@ -1,179 +1,129 @@
-# Standard Operating Procedure (SOP)
+# Assignment 2 – SOP Document
 
 **Student Name:** Balbhader Singh Gill  
-**Instructor:** Felix  
-**Course:** IT / System Administration  
+**Instructor:** Felix  Liang
+**Course:** Systems and Network Administration  
 **Date:** March 30, 2026  
-**Document Type:** Markdown SOP Documentation  
 
 ---
 
-# Standard Operating Procedure
-## New Virtual Machine Creation on VMware vSphere 7.0
+## Standard Operating Procedure
+### Creating a New Virtual Machine (VM) in VMware vSphere 7.0
 
 ---
 
 ## Purpose
-The purpose of this document is to describe the standard process for creating a new Virtual Machine (VM) using VMware vSphere 7.0.  
-This ensures that all virtual machines are created consistently, securely, and according to organizational best practices.
+The purpose of this document is to explain how to create a new Virtual Machine (VM) using VMware vSphere 7.0.  
+This process helps make sure that all virtual machines are created properly, securely, and in the same way every time.
 
 ---
 
 ## Scope
-This SOP applies to:
-- System Administrators
-- IT Support Staff
-- Virtualization Team
-- IT Operations Team
+This SOP is mainly for:
+- System administrators
+- IT support staff
+- Virtualization team members
 
-This document covers:
-- Planning the virtual machine
-- Configuring the VM
-- Installing the operating system
-- Testing the VM
-- Documenting the VM
+It explains the steps from planning the VM to testing and documenting it.
 
 ---
 
 ## Objectives
-The objectives of this SOP are:
-- Ensure proper VM configuration
-- Maintain system security
-- Standardize VM deployment
-- Reduce errors during VM setup
-- Improve documentation and tracking
+The main goals of this SOP are:
+- To create virtual machines correctly
+- To avoid mistakes during setup
+- To follow security practices
+- To keep proper records of all virtual machines
 
 ---
 
-## Accountability Matrix
+## Who is Responsible
 
-| Task | Responsible Person/Team | Approval |
-|------|------------------------|----------|
-| Planning VM Requirements | System Administrator | IT Manager |
-| VM Configuration | Virtualization Team | IT Operations Manager |
-| Operating System Installation | System Administrator | IT Manager |
-| Testing and Verification | QA Team | QA Manager |
-| Documentation | Documentation Team | Author |
+| Task | Responsible Team |
+|------|------------------|
+| Planning the VM | System Administrator |
+| Configuring the VM | Virtualization Team |
+| Installing Operating System | System Administrator |
+| Testing the VM | QA Team |
+| Documenting the VM | Documentation Team |
 
 ---
 
-## Definitions
+## Important Terms
 
 **Virtual Machine (VM):**  
-A virtual computer that runs inside a physical server.
+A computer that runs inside another computer using virtualization.
 
 **VMware vSphere:**  
-A platform used to manage and deploy virtual machines.
+A platform used to create and manage virtual machines.
 
 **ISO File:**  
-An installation image used to install operating systems.
-
-**Datastore:**  
-Storage location where virtual machine files are saved.
+A file used to install an operating system.
 
 ---
 
-# Procedure Steps
+## Procedure
 
-## Step 1: Pre-Creation Planning
+### Step 1: Planning the Virtual Machine
+Before creating the VM, we need to understand why it is needed.
 
-### Step 1.1 Identify Purpose
-Determine why the VM is needed.  
-Example:
-- Web server
-- Database server
-- Application server
+Things to decide:
+- What the VM will be used for
+- How much CPU is required
+- How much RAM is needed
+- Storage space
+- Network requirements
 
-### Step 1.2 Define Requirements
-Decide the resources required:
-- CPU cores
-- RAM
-- Storage
-- Network configuration
-
-### Step 1.3 Confirm With Stakeholders
-Communicate with the requesting team and confirm the specifications.
+After deciding this, confirm everything with the team requesting the VM.
 
 ---
 
-## Step 2: Configure Virtual Machine
-
-### Step 2.1 Access vSphere Client
-1. Open VMware vSphere Client.
-2. Log in to vCenter Server.
-
-### Step 2.2 Create New Virtual Machine
-1. Navigate to the host or cluster.
-2. Right-click and select **New Virtual Machine**.
-3. Select deployment type.
-
-### Step 2.3 Configure Settings
-Set the following:
-- Virtual machine name
-- Operating system type
-- CPU allocation
-- Memory allocation
-- Network settings
-- Storage location
+### Step 2: Creating the Virtual Machine
+1. Open the VMware vSphere Client.
+2. Log in to the vCenter Server.
+3. Go to the host or cluster.
+4. Click **New Virtual Machine**.
+5. Enter the VM name.
+6. Select the operating system.
+7. Assign CPU and memory.
+8. Configure storage and network.
 
 ---
 
-## Step 3: Install Guest Operating System
-
-### Step 3.1 Attach Installation Media
-Attach the ISO file containing the OS installer.
-
-### Step 3.2 Start Installation
-1. Power on the VM.
-2. Follow OS installation instructions.
-3. Configure system settings.
-
-### Step 3.3 Configure Network
-Set:
-- IP address
-- DNS settings
-- Connectivity
+### Step 3: Installing the Operating System
+1. Attach the OS installation ISO file.
+2. Start the virtual machine.
+3. Follow the installation steps on the screen.
+4. Set administrator username and password.
+5. Configure network settings.
 
 ---
 
-## Step 4: Post-Creation Verification
-
-### Step 4.1 Verify Installation
-Check that the OS installed correctly.
-
-### Step 4.2 Test System
-Perform tests:
-- Login test
-- Network connectivity
-- Application test
-
-### Step 4.3 Security Configuration
-Apply:
-- Firewall settings
-- Updates
-- Security policies
+### Step 4: Testing the Virtual Machine
+After installation:
+- Check if the system starts correctly
+- Test login
+- Check internet/network connectivity
+- Verify applications if required
 
 ---
 
-## Step 5: Documentation
-
-### Step 5.1 Record VM Details
-Document:
+### Step 5: Documentation
+Finally, record the VM details such as:
 - VM name
 - CPU and RAM
 - Storage
-- Network configuration
+- IP address
+- Purpose of the VM
 
-### Step 5.2 Update System Records
-Save the information in the company documentation system.
+This helps future management and troubleshooting.
 
 ---
 
-# Revision History
+## Revision History
 
 | Version | Date | Author | Description |
 |--------|------|--------|-------------|
-| 1.0 | March 30, 2026 | Balbhader Singh Gill | Initial Document |
+| 1.0 | March 30, 2026 | Balbhader Singh Gill | First version of the SOP |
 
 ---
-
